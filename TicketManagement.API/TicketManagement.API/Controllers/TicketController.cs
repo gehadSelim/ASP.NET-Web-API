@@ -34,6 +34,7 @@ namespace TicketManagement.API.Controllers
         public ActionResult Post([FromBody] TicketDto value)
         {
             _ticketManager.Add(value);
+            _ticketManager.Save();
             return Ok();
         }
 
@@ -49,6 +50,7 @@ namespace TicketManagement.API.Controllers
                 return NotFound();
             }
             _ticketManager.Update(value);
+            _ticketManager.Save();
             return Ok();
         }
 
@@ -56,6 +58,7 @@ namespace TicketManagement.API.Controllers
         public ActionResult Delete(int id)
         {
             _ticketManager.Delete(id);
+            _ticketManager.Save();
             return Ok();
         }
     }

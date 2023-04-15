@@ -13,5 +13,6 @@ namespace TicketManagement.BL
         void Add(TicketDto ticketDto);
         void Update(TicketDto ticketDto);
         void Delete(int id);
+        void Save();
     }
 }

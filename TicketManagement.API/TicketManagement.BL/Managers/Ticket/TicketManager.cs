@@ -14,7 +14,6 @@ namespace TicketManagement.BL
         {
             Ticket ticket = new Ticket()
             {
-                Id = ticketDto.Id,
                 Title = ticketDto.Title,
                 Description = ticketDto.Description,
                 DepartmentId = ticketDto.DepartmentId
@@ -51,6 +50,11 @@ namespace TicketManagement.BL
                 Description = ticket.Description,
                 DepartmentId = ticket.DepartmentId
             };
+        }
+
+        public void Save()
+        {
+            _ticketRepository.SaveChanges();
         }
 
         public void Update(TicketDto ticketDto)
