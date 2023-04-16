@@ -46,6 +46,7 @@ namespace TicketManagement.DAL
 
         public void Update(Ticket entity)
         {
+            _context.Set<Ticket>().Update(entity);
         }
     }
 }
